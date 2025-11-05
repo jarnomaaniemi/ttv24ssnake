@@ -80,7 +80,7 @@ export function toggleTheme() {
     localStorage.setItem('themeMode', themeMode);
     applyTheme();
     // Piirrä vain jos peli on aloitettu ja ruoka on olemassa
-    if (gameState.gameRunning) {
+    if (gameState.food) {
         draw();
     }
 
