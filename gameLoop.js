@@ -16,7 +16,7 @@ export function gameLoop(timestamp) {
 }
 
 export function playReplay(replayData) {
-    if (replayData.length === 0) return;
+    if (replayData.length === 0 || gameState.isReplaying) return;
 
     let frame = 0;
     let lastReplayTime = 0;
