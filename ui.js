@@ -80,10 +80,9 @@ export function toggleTheme() {
     localStorage.setItem('themeMode', themeMode);
     applyTheme();
     // Piirrä vain jos peli on aloitettu ja ruoka on olemassa
-    if (gameState.food) {
+    if (gameState.snake.length > 0) {
         draw();
     }
-
 }
 
 export function generateRandomUsername() {
