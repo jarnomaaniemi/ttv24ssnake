@@ -15,12 +15,13 @@ const stopReplayBtn = document.getElementById('stopReplayBtn')
 export function setupUI() {
     applyTheme();
     // Pelaajan nimi
-    gameState.playerName = localStorage.getItem('playerName');
-    if (!gameState.playerName) {
+    let playerName = localStorage.getItem('playerName');
+    if (!playerName) {
         gameState.playerName = generateRandomUsername();
-        localStorage.setItem('playerName', gameState.playerName);
+        localStorage.setItem('playerName', playerName);
     }
-    document.getElementById('playerName').textContent = gameState.playerName
+    gameState.playerName = playerName;
+    document.getElementById('playerName').textContent = playerName
 
     // Paras tulos
     if (localStorage.getItem('bestScore')) {
