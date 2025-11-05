@@ -1,10 +1,9 @@
-# Nokia 3010 -henkinen snake-peli, jossa yhdistyvät modernit web-teknologiat.
+# Nokia 3010 -henkinen snake-peli
 
 ## ⚙️ Ominaisuudet
 - Tumma/vaalea teema
 - Reaaliaikainen tulostaulukko
-- Pelin toisintaominaisuus 🎥
-- Pelimoottori perustuu **kokonaislukuihin**, mikä tekee siitä yksinkertaisen ja tehokkaan toteutuksen ruudukkoon pohjautuvassa pelissä
+- Pelimoottori perustuu **kokonaislukuihin**
 
 ## 🕹️ Pelaaminen
 - Nuolinäppäimet ohjaavat käärmettä
