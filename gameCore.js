@@ -149,21 +149,23 @@ export function draw() {
     for (let part of gameState.snake) {
         ctx.fillRect(part.x * gridSize, part.y * gridSize, gridSize, gridSize);
     }
-    // Ruoka: määritykset
-    ctx.lineWidth = 3;
-    ctx.strokeStyle = isDark ? '#ffffff' : '#000000';
-    const padding = 4; // pikselimäärä, esim. 4px sisäänpäin
-    const startX = gameState.food.x * gridSize;
-    const startY = gameState.food.y * gridSize;
-    const endX = (gameState.food.x + 1) * gridSize;
-    const endY = (gameState.food.y + 1) * gridSize;
-    // Ruoka: piirto
-    ctx.beginPath();
-    ctx.moveTo(startX + padding, startY + padding);
-    ctx.lineTo(endX - padding, endY - padding);
-    ctx.moveTo(endX - padding, startY + padding);
-    ctx.lineTo(startX + padding, endY - padding);
-    ctx.stroke();
+    // Ruoka: piirrä vain jos ruoka on olemassa
+    if (gameState.food !== null) {
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = isDark ? '#ffffff' : '#000000';
+        const padding = 4; // pikselimäärä, esim. 4px sisäänpäin
+        const startX = gameState.food.x * gridSize;
+        const startY = gameState.food.y * gridSize;
+        const endX = (gameState.food.x + 1) * gridSize;
+        const endY = (gameState.food.y + 1) * gridSize;
+        // Ruoka: piirto
+        ctx.beginPath();
+        ctx.moveTo(startX + padding, startY + padding);
+        ctx.lineTo(endX - padding, endY - padding);
+        ctx.moveTo(endX - padding, startY + padding);
+        ctx.lineTo(startX + padding, endY - padding);
+        ctx.stroke();
+    }
 }
 
 // Päättää pelin ja päivittää tulokset
