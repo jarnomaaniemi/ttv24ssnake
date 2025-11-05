@@ -1,0 +1,151 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.phone-screen {
+    display: inline-block;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-left: #333 0.25rem solid;
+    border-right: #333 0.25rem solid;
+    border-bottom: #333 0.25rem solid;
+    border-top: #333 0.25rem solid;
+}
+
+canvas {
+    display: block;
+}
+
+#MsgDisplay {
+    font-size: 16px;
+    font-weight: bold;
+    height: 24px;
+    line-height: 24px;
+    margin: 5px;
+}
+
+#playerName {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+#leaderboard h3 {
+  margin-top: 5px;
+}
+
+#leaderboardList li {
+  margin: 4px 0;
+}
+
+#score {
+    height: 24px;
+    line-height: 24px;
+    font-weight: bold;
+    width: 320px;
+    margin: auto;
+    text-align: left;
+    font-size: large;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border-left: #333 0.25rem solid;
+    border-right: #333 0.25rem solid;
+    border-top: #333 0.25rem solid;
+    font-family: monospace;
+    text-indent: 5px;
+}
+
+
+#lastScore,
+#bestScore {
+    font-size: 16px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+}
+
+button:hover {
+    background: #555;
+}
+
+/* Light theme override */
+body.light-theme {
+    background: #f4f4f4;
+    color: #000;
+}
+
+body.light-theme canvas {
+    background: #dfe8d4;
+}
+
+body.light-theme #score {
+    background-color: #dfe8d4;
+    color: #000;
+}
+
+body.light-theme #MsgDisplay,
+body.light-theme #lastScore,
+body.light-theme #bestScore {
+    color: #000;
+}
+
+body.light-theme #playerName {
+    color: #2f4f2f;
+;
+}
+
+body.light-theme button {
+    background: #333;
+    color: #fff;
+}
+
+body.light-theme button:hover {
+    background: #555;
+}
+
+/* Dark theme override */
+body.dark-theme {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-theme canvas {
+    background: #1e1e1e;
+}
+
+body.dark-theme #score {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-theme #playerName {
+    color: #6abf69;
+}
+
+body.dark-theme #MsgDisplay,
+body.dark-theme #lastScore,
+body.dark-theme #bestScore {
+    color: #e0e0e0;
+}
+
+body.dark-theme button {
+    background: #e0e0e0;
+    color: #121212;
+}
+
+body.dark-theme button:hover {
+    background: #ccc;
+}
+
+#themeToggle {
+    cursor: pointer;
+}
