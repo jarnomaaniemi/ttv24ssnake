@@ -17,7 +17,7 @@ export function setupUI() {
     // Pelaajan nimi
     let playerName = localStorage.getItem('playerName');
     if (!playerName) {
-        gameState.playerName = generateRandomUsername();
+        playerName = generateRandomUsername();
         localStorage.setItem('playerName', playerName);
     }
     gameState.playerName = playerName;
