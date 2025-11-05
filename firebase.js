@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 import { collection, getDocs, query, orderBy, addDoc, onSnapshot, limit } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
-import { playReplay } from "./gameLoop.js";
+// import { playReplay } from "./gameLoop.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -47,27 +47,26 @@ function updateLeaderboardUI(leaderboardElement, scores) {
     scores.forEach((scoreEntry, index) => {
         const listItem = document.createElement("li");
         listItem.textContent = `${index + 1}. ${scoreEntry.playerName}: ${scoreEntry.score}`;
-        // Luo kuvake
-        const replayIcon = document.createElement("span");
-        replayIcon.textContent = "🎥";
-        replayIcon.style.cursor = "pointer";
-        replayIcon.style.marginLeft = "10px";
-        // Lisää toiminto
-        replayIcon.addEventListener("click", () => {
-            playReplay(scoreEntry.replay);
-        });
 
-        listItem.appendChild(replayIcon);
+        // // Replay
+        // const replayIcon = document.createElement("span");
+        // replayIcon.textContent = "🎥";
+        // replayIcon.style.cursor = "pointer";
+        // replayIcon.style.marginLeft = "10px";
+        // replayIcon.addEventListener("click", () => {
+        //     playReplay(scoreEntry.replay);
+        // });
+        // listItem.appendChild(replayIcon);
+
         leaderboardElement.appendChild(listItem);
     });
 }
 
-async function saveScoreToDatabase(playerName, score, replay) {
+async function saveScoreToDatabase(playerName, score) {
     try {
         await addDoc(collection(db, "scores"), {
             playerName: playerName,
             score: score,
-            replay: replay,
             timestamp: new Date()
         });
         console.log("Pisteet tallennettu!");

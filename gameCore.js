@@ -1,5 +1,5 @@
 import { themeMode } from "./ui.js";
-import { replayData, resetReplayData, recordReplayFrame } from "./replay.js";
+// import { replayData, resetReplayData, recordReplayFrame } from "./replay.js";
 import { saveScoreToDatabase } from "./firebase.js";
 import { gameLoop } from "./gameLoop.js";
 
@@ -53,7 +53,7 @@ export function initGame() {
     gameState.paused = false;
     directionQueue = [];
 
-    resetReplayData();
+    // resetReplayData();
 
     // Päivitetään käyttöliittymä
     document.getElementById('score').textContent = `${gameState.score.toString().padStart(3, "0")}`;
@@ -134,7 +134,7 @@ export function update() {
         gameState.snake.pop();
     }
     // Tallennetaan ruutu toisintaa varten
-    recordReplayFrame(gameState.snake, gameState.food, gameState.gameSpeed);
+    // recordReplayFrame(gameState.snake, gameState.food, gameState.gameSpeed);
 }
 
 // Piirtää pelin tilan canvas-elementtiin
@@ -178,7 +178,7 @@ export function endGame() {
     if (gameState.score > gameState.bestScore) {
         gameState.bestScore = gameState.score;
         localStorage.setItem('bestScore', gameState.bestScore);
-        saveScoreToDatabase(gameState.playerName, gameState.bestScore, replayData);
+        saveScoreToDatabase(gameState.playerName, gameState.bestScore);
     }
 
     // Päivitetään käyttöliittymä

@@ -1,6 +1,6 @@
 import { setupRealtimeScoreListener } from "./firebase.js";
 import { initGame, draw, gameState } from "./gameCore.js";
-import { gameLoop, stopReplay } from "./gameLoop.js";
+import { gameLoop } from "./gameLoop.js";
 
 // Globaalit muuttujat
 export let themeMode = localStorage.getItem('themeMode') ||
