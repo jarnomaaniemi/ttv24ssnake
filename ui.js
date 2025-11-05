@@ -80,7 +80,6 @@ export function toggleTheme() {
     localStorage.setItem('themeMode', themeMode);
     applyTheme();
     draw();
-
 }
 
 export function generateRandomUsername() {
