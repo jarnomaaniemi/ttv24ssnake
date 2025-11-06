@@ -1,8 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
-import { collection, getDocs, query, orderBy, addDoc, onSnapshot, limit } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
-// import { playReplay } from "./gameLoop.js";
+import { collection, query, orderBy, addDoc, onSnapshot, limit } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -47,17 +46,6 @@ function updateLeaderboardUI(leaderboardElement, scores) {
     scores.forEach((scoreEntry, index) => {
         const listItem = document.createElement("li");
         listItem.textContent = `${index + 1}. ${scoreEntry.playerName}: ${scoreEntry.score}`;
-
-        // // Replay
-        // const replayIcon = document.createElement("span");
-        // replayIcon.textContent = "🎥";
-        // replayIcon.style.cursor = "pointer";
-        // replayIcon.style.marginLeft = "10px";
-        // replayIcon.addEventListener("click", () => {
-        //     playReplay(scoreEntry.replay);
-        // });
-        // listItem.appendChild(replayIcon);
-
         leaderboardElement.appendChild(listItem);
     });
 }

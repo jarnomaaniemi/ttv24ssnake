@@ -1,5 +1,4 @@
 import { themeMode } from "./ui.js";
-// import { replayData, resetReplayData, recordReplayFrame } from "./replay.js";
 import { saveScoreToDatabase } from "./firebase.js";
 import { gameLoop } from "./gameLoop.js";
 

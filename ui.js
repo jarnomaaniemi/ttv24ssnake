@@ -9,11 +9,11 @@ export let themeMode = localStorage.getItem('themeMode') ||
 // DOM-elementi
 const gameBtn = document.getElementById('gameBtn');
 const themeBtn = document.getElementById('themeToggle');
-const stopReplayBtn = document.getElementById('stopReplayBtn')
 
 // Käyttöliittymän alustus
 export function setupUI() {
     applyTheme();
+    
     // Pelaajan nimi
     let playerName = localStorage.getItem('playerName');
     if (!playerName) {
@@ -30,24 +30,12 @@ export function setupUI() {
     }
 
     // Painikkeet
-    if (themeBtn) {
-        themeBtn.addEventListener('click', function (e) {
-            toggleTheme();
-            e.target.blur();
-        });
-    }
-
-    if (gameBtn) {
-        gameBtn.addEventListener('click', startGame);
-        gameBtn.focus();
-    }
-
-    if (stopReplayBtn) {
-        stopReplayBtn.addEventListener('click', () => {
-            stopReplay();
-        });
-        stopReplayBtn.style.display = 'none';
-    }
+    gameBtn.addEventListener('click', startGame);
+    gameBtn.focus();
+    themeBtn.addEventListener('click', function (e) {
+        toggleTheme();
+        e.target.blur();
+    });
 
     // Tulostaulukko
     setupRealtimeScoreListener(document.getElementById("leaderboardList"));
